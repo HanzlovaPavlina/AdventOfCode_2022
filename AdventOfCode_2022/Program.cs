@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace AdventOfCode_2022 {
     class Program {
         static void Main(string[] args) {
-            
-            Console.WriteLine("Hello World!");
+
+            CalorieCounting_01 counting = new CalorieCounting_01();
+            Console.WriteLine(counting.GetThreeMaxCalories());
             Console.ReadKey();
             
             }
