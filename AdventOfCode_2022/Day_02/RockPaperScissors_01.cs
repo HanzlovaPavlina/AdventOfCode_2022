@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AdventOfCode_2022 {
-    class RockPaperScissors {
+    class RockPaperScissors_01 {
 
         public int GetFinalScore(string path) {
             LoadInput(path);

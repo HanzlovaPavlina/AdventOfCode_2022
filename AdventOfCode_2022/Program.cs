@@ -11,7 +11,7 @@ namespace AdventOfCode_2022 {
             //CalorieCounting_01 counting = new CalorieCounting_01();
             //Console.WriteLine(counting.GetThreeMaxCalories());
 
-            RockPaperScissors newGame = new RockPaperScissors();
+            RockPaperScissors_02 newGame = new RockPaperScissors_02();
             Console.WriteLine(newGame.GetFinalScore("../../Day_02/input.txt"));
 
             Console.ReadKey();
