@@ -9,31 +9,43 @@ namespace AdventOfCode_2022 {
     class RockPaperScissors_01 {
 
         public int GetFinalScore(string path) {
-            LoadInput(path);
+            LoadAndProcessInput(path);
             return finalScore;
             }
-
-        int[] games = new int[2500];
+        
         string[] gameShapes = new string[2];
-        int[,] scoreTable = new int[3, 3] { { 3, 6, 0 }, { 0, 3, 6 }, { 6, 0, 3 } };
         private int finalScore;
 
-        private int GetScore(int shape_1, int shepe_2) {
-            return scoreTable[shape_1, shepe_2] + shepe_2 + 1;
-            }
+        Dictionary<char, Dictionary<char, int>> resultScores = new Dictionary<char, Dictionary<char, int>>(){
+            {'X', new Dictionary<char, int>() {{'A', 3}, {'B', 0}, {'C', 6}}},
+            {'Y', new Dictionary<char, int>() {{'A', 6}, {'B', 3}, {'C', 0}}},
+            {'Z', new Dictionary<char, int>() {{'A', 0}, {'B', 6}, {'C', 3}}},
+        };
+        Dictionary<char, int> moveScores = new Dictionary<char, int>() { { 'X', 1 }, { 'Y', 2 }, { 'Z', 3 } };
 
-        private void LoadInput(string path) {
-            int shape_1, shape_2, actualScore;
+        // get score for one game
+        private int GetScore(int shape_1, int shape_2) {
+            int resultScore =  resultScores.First(s => s.Key == shape_2).Value
+                                           .First(s => s.Key == shape_1).Value;
+            int moveScore = moveScores.First(s => s.Key == shape_2).Value;
+            return resultScore + moveScore;
+        }
+
+        // load input and process one game per game
+        // add scores into final score for all games
+        private void LoadAndProcessInput(string path) {
+            char shape_1, shape_2;
+            int actualScore;
 
             foreach (string line in File.ReadLines(path)) {
                 gameShapes = line.Split(' ');
-                shape_1 = (char.Parse(gameShapes[0])) - 65;
-                shape_2 = (char.Parse(gameShapes[1])) - 88;
+                shape_1 = char.Parse(gameShapes[0]);
+                shape_2 = char.Parse(gameShapes[1]);
 
                 actualScore = GetScore(shape_1, shape_2);
                 finalScore += actualScore;
-                Console.WriteLine($"shape_1: {gameShapes[0]}={shape_1}, shape_2: {gameShapes[1]}={shape_2}, score: {actualScore}");
-                }
+                // Console.WriteLine($"shape_1: {gameShapes[0]}={shape_1}, shape_2: {gameShapes[1]}={shape_2}, score: {actualScore}");
+            }
         }
     }
 }

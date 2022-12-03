@@ -6,11 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AdventOfCode_2022 {
-    class RucksackReorganization {
+    class RucksackReorganization_01 {
 
-        public int GetSum() {
+        public int GetSum(string path) {
+            LoadAndProcessInput(path);
             return finalSum;
             }
+
         private char[] rucksackTypes = new char[300];
         private List<KeyValuePair<char, int>> priorities = new List<KeyValuePair<char, int>>()
         {
@@ -70,7 +72,7 @@ namespace AdventOfCode_2022 {
         private int finalSum = 0;
 
 
-        public void LoadInput(string path) {
+        public void LoadAndProcessInput(string path) {
 
             string firstRucksack; string secondRucksack;
 

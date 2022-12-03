@@ -45,7 +45,8 @@
     <Compile Include="Day_01\CalorieCounting.cs" />
     <Compile Include="Day_02\RockPaperScissors_02.cs" />
     <Compile Include="Day_02\RockPaperScissors_01.cs" />
-    <Compile Include="Day_03\RucksackReorganization.cs" />
+    <Compile Include="Day_03\RucksackReorganization_02.cs" />
+    <Compile Include="Day_03\RucksackReorganization_01.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

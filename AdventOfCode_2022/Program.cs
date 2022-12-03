@@ -11,12 +11,11 @@ namespace AdventOfCode_2022 {
             //CalorieCounting_01 counting = new CalorieCounting_01();
             //Console.WriteLine(counting.GetThreeMaxCalories());
 
-            //RockPaperScissors_02 newGame = new RockPaperScissors_02();
-            //Console.WriteLine(newGame.GetFinalScore("../../Day_02/input.txt"));
+            RockPaperScissors_01 newGame = new RockPaperScissors_01();
+            Console.WriteLine(newGame.GetFinalScore("../../Day_02/input.txt"));
 
-            RucksackReorganization rucksacks = new RucksackReorganization();
-            rucksacks.LoadInput("../../Day_03/input.txt");
-            Console.WriteLine(rucksacks.GetSum());
+            //RucksackReorganization_02 rucksacks = new RucksackReorganization_02();
+            //Console.WriteLine(rucksacks.GetSum("../../Day_03/input.txt"));
 
             Console.ReadKey();
             
