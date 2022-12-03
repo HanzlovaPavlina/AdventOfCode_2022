@@ -71,7 +71,7 @@ namespace AdventOfCode_2022 {
         };
         private int finalSum = 0;
 
-
+        // load input and process each three lines to get final score
         private void LoadAndProcessInput(string path) {
 
             string firstRucksack; string secondRucksack; string thirdRucksack;
@@ -81,7 +81,7 @@ namespace AdventOfCode_2022 {
             try {
                 using (StreamReader sr = new StreamReader(path)) {
                     string line;
-                    int i = 0;
+                    
                     while ((line = sr.ReadLine()) != null) {
                         firstRucksack = line;
                         secondRucksack = sr.ReadLine();
@@ -103,6 +103,7 @@ namespace AdventOfCode_2022 {
             
             }
 
+        // find letter occurring in all three strings (rucksack) 
         private char findType(string first, string second, string third) {
 
             List<char> helper = new List<char>();
