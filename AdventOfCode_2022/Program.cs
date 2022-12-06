@@ -17,8 +17,11 @@ namespace AdventOfCode_2022 {
             //RucksackReorganization_02 rucksacks = new RucksackReorganization_02();
             //Console.WriteLine(rucksacks.GetSum("../../Day_03/input.txt"));
 
-            CampCleanup camp = new CampCleanup();
-            Console.WriteLine(camp.GetCleanUpFullyContains("../../Day_04/input.txt"));
+            //CampCleanup camp = new CampCleanup();
+            //Console.WriteLine(camp.GetCleanUpFullyContains("../../Day_04/input.txt"));
+
+            SupplyStacks stacks = new SupplyStacks();
+            Console.WriteLine(stacks.GetTopsOfStacks("../../Day_05/input.txt"));
 
             Console.ReadKey();
             }
