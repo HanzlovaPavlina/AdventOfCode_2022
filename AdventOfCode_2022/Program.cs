@@ -20,8 +20,11 @@ namespace AdventOfCode_2022 {
             //CampCleanup camp = new CampCleanup();
             //Console.WriteLine(camp.GetCleanUpFullyContains("../../Day_04/input.txt"));
 
-            SupplyStacks stacks = new SupplyStacks();
-            Console.WriteLine(stacks.GetTopsOfStacks("../../Day_05/input.txt"));
+            //SupplyStacks stacks = new SupplyStacks();
+            //Console.WriteLine(stacks.GetTopsOfStacks("../../Day_05/input.txt"));
+
+            TuningTrouble trouble = new TuningTrouble();
+            Console.WriteLine(trouble.GetStartOfPacketMarker("../../Day_06/input.txt"));
 
             Console.ReadKey();
             }

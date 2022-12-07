@@ -49,6 +49,7 @@
     <Compile Include="Day_03\RucksackReorganization_01.cs" />
     <Compile Include="Day_04\CampCleanup.cs" />
     <Compile Include="Day_05\SupplyStacks.cs" />
+    <Compile Include="Day_06\TuningTrouble.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +62,7 @@
     <Content Include="Day_03\input.txt" />
     <Content Include="Day_04\input.txt" />
     <Content Include="Day_05\input.txt" />
+    <Content Include="Day_06\input.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

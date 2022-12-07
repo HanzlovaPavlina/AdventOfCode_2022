@@ -44,26 +44,3 @@ namespace AdventOfCode_2022 {
 }
 
 
-            /*
-             * try {
-                var fs = File.OpenRead(path);
-                Console.WriteLine(fs.CanRead);
-                using (StreamReader sr = new StreamReader(File.OpenRead(path))) {
-                    string line;
-                    
-                    while ((line = sr.ReadLine()) != null) {
-                        calories[elves] = 0;
-                        while ((line = sr.ReadLine()) != "\n") {
-                            calories[elves] += Convert.ToInt32(line);
-                            Console.WriteLine($"i: {elves}, SUMA: {calories[elves]}, caried calories: {line}");
-                            }
-                        }
-                        if (calories[elves] > maxCalories) maxCalories = calories[elves];
-                        elves++;
-                    }
-                }
-            catch (Exception e) {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-            }
-            */
