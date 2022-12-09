@@ -23,8 +23,11 @@ namespace AdventOfCode_2022 {
             //SupplyStacks stacks = new SupplyStacks();
             //Console.WriteLine(stacks.GetTopsOfStacks("../../Day_05/input.txt"));
 
-            TuningTrouble trouble = new TuningTrouble();
-            Console.WriteLine(trouble.GetStartOfPacketMarker("../../Day_06/input.txt"));
+            //TuningTrouble trouble = new TuningTrouble();
+            //Console.WriteLine(trouble.GetStartOfPacketMarker("../../Day_06/input.txt"));
+
+            MyDevice device = new MyDevice("../../Day_07/input.txt");
+            Console.WriteLine("TOTAL >> " + device.SolvePart_2());
 
             Console.ReadKey();
             }
