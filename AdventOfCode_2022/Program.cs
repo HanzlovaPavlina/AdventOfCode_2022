@@ -26,9 +26,12 @@ namespace AdventOfCode_2022 {
             //TuningTrouble trouble = new TuningTrouble();
             //Console.WriteLine(trouble.GetStartOfPacketMarker("../../Day_06/input.txt"));
 
-            MyDevice device = new MyDevice("../../Day_07/input.txt");
-            Console.WriteLine("TOTAL >> " + device.SolvePart_2());
+            //MyDevice device = new MyDevice("../../Day_07/input.txt");
+            //Console.WriteLine("TOTAL >> " + device.SolvePart_2());
 
+            TreeTopTreeHouse treeHouse = new TreeTopTreeHouse("../../Day_08/input.txt");
+            Console.WriteLine(treeHouse.getVisibleTreeCount());
+            Console.WriteLine(treeHouse.getBestScenicScore());
             Console.ReadKey();
             }
         }
