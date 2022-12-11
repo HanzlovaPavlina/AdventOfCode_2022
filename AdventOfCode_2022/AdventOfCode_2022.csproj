@@ -54,6 +54,8 @@
     <Compile Include="Day_08\TreeTopTreeHouse.cs" />
     <Compile Include="Day_09\RopeBridge.cs" />
     <Compile Include="Day_09\Grid.cs" />
+    <Compile Include="Day_10\CathodeRayTube_02.cs" />
+    <Compile Include="Day_10\CathodeRayTube_01.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +76,8 @@
     <Content Include="Day_09\input.txt" />
     <Content Include="Day_09\testInput_2.txt" />
     <Content Include="Day_09\testInput.txt" />
+    <Content Include="Day_10\input.txt" />
+    <Content Include="Day_10\testInput.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

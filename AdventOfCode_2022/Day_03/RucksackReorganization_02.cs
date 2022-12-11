@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode_2022 {
+namespace AdventOfCode_2022.Day_03 {
     class RucksackReorganization_02 {
 
         public int GetSum(string path) {

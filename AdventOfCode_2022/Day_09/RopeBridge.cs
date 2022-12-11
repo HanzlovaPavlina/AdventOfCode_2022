@@ -53,7 +53,7 @@ namespace AdventOfCode_2022.Day_09 {
                         map.getPoint(rope.Last().x, rope.Last().y).Use();
                         steps--;
                     }
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 1: {rope[1].x},{rope[1].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 1: {rope[1].x},{rope[1].y}");
                     //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 2: {rope[2].x},{rope[2].y}");
                     //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 3: {rope[3].x},{rope[3].y}");
                     //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 4: {rope[4].x},{rope[4].y}");

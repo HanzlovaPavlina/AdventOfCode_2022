@@ -19,7 +19,7 @@ struct Range {
         }
     }
 
-namespace AdventOfCode_2022 {
+namespace AdventOfCode_2022.Day_04 {
     class CampCleanup {
 
         public int GetCleanUpFullyContains(string input) {
