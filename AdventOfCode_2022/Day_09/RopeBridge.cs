@@ -10,9 +10,14 @@ namespace AdventOfCode_2022.Day_09 {
     class RopeBridge {
 
         Grid map = new Grid(50, 50);
+
+        //   PART 1
+        //Coordinates[] rope = new Coordinates[2];
+        //Coordinates[] lasts = new Coordinates[2];
+
+        //   PART 2
         Coordinates[] rope = new Coordinates[10];
         Coordinates[] lasts = new Coordinates[10];
-        int moves = 0;
 
         public int GetTailVisitCount(string path) {
             LoadAndProcessMoves(path);
@@ -31,7 +36,7 @@ namespace AdventOfCode_2022.Day_09 {
                 string[] nextMove = new string [2];
                 for (int i = 0;i < rope.Length; i++) rope[i] = new Coordinates(25, 25);
                 for (int i = 0; i < lasts.Length; i++) lasts[i] = new Coordinates(25, 25);
-                map.getPoint(rope[9].x, rope[9].y).Use();
+                map.getPoint(rope.Last().x, rope.Last().y).Use();
 
 
                 foreach (string line in File.ReadLines(path)) {
@@ -45,19 +50,19 @@ namespace AdventOfCode_2022.Day_09 {
                         for (int i = 0; i < rope.Length - 1; i++) {
                             CheckAndMovePartOfRope(i, i+1);
                             }
-                        map.getPoint(rope[9].x, rope[9].y).Use();
+                        map.getPoint(rope.Last().x, rope.Last().y).Use();
                         steps--;
                     }
                     Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 1: {rope[1].x},{rope[1].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 2: {rope[2].x},{rope[2].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 3: {rope[3].x},{rope[3].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 4: {rope[4].x},{rope[4].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 5: {rope[5].x},{rope[5].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 6: {rope[6].x},{rope[6].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 7: {rope[7].x},{rope[7].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 8: {rope[8].x},{rope[8].y}");
-                    Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 9: {rope[9].x},{rope[9].y}");
-                    Console.WriteLine("----------------------------------------------------------------------------------------------");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 2: {rope[2].x},{rope[2].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 3: {rope[3].x},{rope[3].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 4: {rope[4].x},{rope[4].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 5: {rope[5].x},{rope[5].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 6: {rope[6].x},{rope[6].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 7: {rope[7].x},{rope[7].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 8: {rope[8].x},{rope[8].y}");
+                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 9: {rope[9].x},{rope[9].y}");
+                    //Console.WriteLine("----------------------------------------------------------------------------------------------");
                     }
             }
             catch (Exception e) {
