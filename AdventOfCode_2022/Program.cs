@@ -29,9 +29,13 @@ namespace AdventOfCode_2022 {
             //MyDevice device = new MyDevice("../../Day_07/input.txt");
             //Console.WriteLine("TOTAL >> " + device.SolvePart_2());
 
-            TreeTopTreeHouse treeHouse = new TreeTopTreeHouse("../../Day_08/input.txt");
-            Console.WriteLine(treeHouse.getVisibleTreeCount());
-            Console.WriteLine(treeHouse.getBestScenicScore());
+            //TreeTopTreeHouse treeHouse = new TreeTopTreeHouse("../../Day_08/input.txt");
+            //Console.WriteLine(treeHouse.getVisibleTreeCount());
+            //Console.WriteLine(treeHouse.getBestScenicScore());
+
+            Day_09.RopeBridge rope = new Day_09.RopeBridge();
+            Console.WriteLine(rope.GetTailVisitCount("../../Day_09/testInput_2.txt"));
+
             Console.ReadKey();
             }
         }

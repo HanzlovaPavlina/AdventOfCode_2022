@@ -52,6 +52,8 @@
     <Compile Include="Day_06\TuningTrouble.cs" />
     <Compile Include="Day_07\NoSpaceLeftOnDevice.cs" />
     <Compile Include="Day_08\TreeTopTreeHouse.cs" />
+    <Compile Include="Day_09\RopeBridge.cs" />
+    <Compile Include="Day_09\Grid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +71,9 @@
     <Content Include="Day_07\testInput.txt" />
     <Content Include="Day_08\input.txt" />
     <Content Include="Day_08\testInput.txt" />
+    <Content Include="Day_09\input.txt" />
+    <Content Include="Day_09\testInput_2.txt" />
+    <Content Include="Day_09\testInput.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

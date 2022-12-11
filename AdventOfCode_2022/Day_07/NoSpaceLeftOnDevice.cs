@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace AdventOfCode_2022 {
+namespace AdventOfCode_2022.Day_07 {
     // *** Day 7: No Space Left On Device ***
 
     public enum DFSState {
