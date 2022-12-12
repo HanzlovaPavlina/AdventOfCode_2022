@@ -70,7 +70,7 @@ namespace AdventOfCode_2022.Day_11 {
             while (counting > 0) {
                 foreach (Monkey monkey in monkeys) {
                     foreach (int item in monkey.startingItems) {
-                        int newItem = monkey.operation.Calculate(item)/3;
+                        int newItem = monkey.operation.Calculate(item);
                         int nextMonkey = monkey.condition.Test(newItem);
                         monkeys[nextMonkey].startingItems.Add(newItem);
                         monkey.inspectedItems++;
@@ -86,6 +86,9 @@ namespace AdventOfCode_2022.Day_11 {
                 }
             
             var sorted = monkeys.OrderBy(m => m.inspectedItems).ToList();
+            Console.WriteLine($"== After round {counting} ==");
+            foreach (Monkey monkey in monkeys)
+                Console.WriteLine($"Monkey {monkey.number} inspected items {monkey.inspectedItems} times.");
             return sorted.Last().inspectedItems* sorted.ElementAt(sorted.Count-2).inspectedItems;
             }
 

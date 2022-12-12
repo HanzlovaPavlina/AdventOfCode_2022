@@ -57,6 +57,7 @@
     <Compile Include="Day_10\CathodeRayTube_02.cs" />
     <Compile Include="Day_10\CathodeRayTube_01.cs" />
     <Compile Include="Day_11\MonkeyInTheMiddle.cs" />
+    <Compile Include="Day_12\HillClimbingAlgorithm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +82,8 @@
     <Content Include="Day_10\testInput.txt" />
     <Content Include="Day_11\input.txt" />
     <Content Include="Day_11\testInput.txt" />
+    <Content Include="Day_12\input.txt" />
+    <Content Include="Day_12\testInput.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
