@@ -36,8 +36,14 @@ namespace AdventOfCode_2022 {
             //Day_09.RopeBridge rope = new Day_09.RopeBridge();
             //Console.WriteLine(rope.GetTailVisitCount("../../Day_09/testInput_2.txt"));
 
-            Day_10.Signal_2 signal = new Day_10.Signal_2("../../Day_10/input.txt");
+            //Day_10.Signal_2 signal = new Day_10.Signal_2("../../Day_10/input.txt");
             //Console.WriteLine(signal.getStrength());
+
+            //Day_10.Signal_2 signal = new Day_10.Signal_2("../../Day_10/input.txt");
+            //Console.WriteLine(signal.getStrength());
+
+            Day_11.Monkeys monkeys = new Day_11.Monkeys("../../Day_11/testInput.txt");
+            Console.WriteLine(monkeys.playWitItems());
 
             Console.ReadKey();
             }
