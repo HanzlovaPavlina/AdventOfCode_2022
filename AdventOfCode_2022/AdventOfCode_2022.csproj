@@ -53,11 +53,12 @@
     <Compile Include="Day_07\NoSpaceLeftOnDevice.cs" />
     <Compile Include="Day_08\TreeTopTreeHouse.cs" />
     <Compile Include="Day_09\RopeBridge.cs" />
-    <Compile Include="Day_09\Grid.cs" />
+    <Compile Include="Grid.cs" />
     <Compile Include="Day_10\CathodeRayTube_02.cs" />
     <Compile Include="Day_10\CathodeRayTube_01.cs" />
     <Compile Include="Day_11\MonkeyInTheMiddle.cs" />
     <Compile Include="Day_12\HillClimbingAlgorithm.cs" />
+    <Compile Include="Day_14\RegolithReservoir.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +85,11 @@
     <Content Include="Day_11\testInput.txt" />
     <Content Include="Day_12\input.txt" />
     <Content Include="Day_12\testInput.txt" />
+    <Content Include="Day_14\input.txt" />
+    <Content Include="Day_14\testInput.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Day_13\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -45,8 +45,12 @@ namespace AdventOfCode_2022 {
             //Day_11.Monkeys monkeys = new Day_11.Monkeys("../../Day_11/testInput.txt");
             //Console.WriteLine(monkeys.playWitItems());
 
-            Day_12.HillClimbingAlgorithm hills = new Day_12.HillClimbingAlgorithm("../../Day_12/input.txt");
-            Console.WriteLine(hills.GetShortestWayFromEnd());
+            //Day_12.HillClimbingAlgorithm hills = new Day_12.HillClimbingAlgorithm("../../Day_12/input.txt");
+            //Console.WriteLine(hills.GetShortestWayFromEnd());
+            
+            Day_14.RegolithReservoir cave = new Day_14.RegolithReservoir("../../Day_14/input.txt");
+            Console.WriteLine(cave.PourSand());
+            Console.WriteLine(cave.PourAndFullSand());
 
             Console.ReadKey();
             }

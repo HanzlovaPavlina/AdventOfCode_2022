@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode_2022.Day_09 {
+namespace AdventOfCode_2022 {
 
         public enum Status {
             Fresh = 0,
