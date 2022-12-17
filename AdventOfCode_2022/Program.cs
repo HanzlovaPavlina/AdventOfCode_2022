@@ -33,8 +33,8 @@ namespace AdventOfCode_2022 {
             //Console.WriteLine(treeHouse.getVisibleTreeCount());
             //Console.WriteLine(treeHouse.getBestScenicScore());
 
-            //Day_09.RopeBridge rope = new Day_09.RopeBridge();
-            //Console.WriteLine(rope.GetTailVisitCount("../../Day_09/testInput_2.txt"));
+            Day_09.RopeBridge rope = new Day_09.RopeBridge();
+            Console.WriteLine(rope.GetTailVisitCount("../../Day_09/testInput_2.txt"));
 
             //Day_10.Signal_2 signal = new Day_10.Signal_2("../../Day_10/input.txt");
             //Console.WriteLine(signal.getStrength());
@@ -55,8 +55,8 @@ namespace AdventOfCode_2022 {
             //Console.WriteLine(cave.PourSand());
             //Console.WriteLine(cave.PourAndFullSand());
 
-            Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
-            Console.WriteLine(cave.GetMaxRealesedPressure(30));
+            //Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
+            //Console.WriteLine(cave.GetMaxRealesedPressure(30));
 
             Console.ReadKey();
             }

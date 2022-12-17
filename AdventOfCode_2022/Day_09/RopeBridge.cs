@@ -9,46 +9,48 @@ namespace AdventOfCode_2022.Day_09 {
 
     class RopeBridge {
 
-        Grid map = new Grid(50, 50);
+        private static int gridSize = 20;
+        private static int ropeLength = 10; // for part_1 = 2, for part_2 = 10
 
-        //   PART 1
-        //Coordinates[] rope = new Coordinates[2];
-        //Coordinates[] lasts = new Coordinates[2];
-
-        //   PART 2
-        Coordinates[] rope = new Coordinates[10];
-        Coordinates[] lasts = new Coordinates[10];
+        Grid map = new Grid(gridSize, gridSize);
+        Coordinates[] rope = new Coordinates[ropeLength];
+        Coordinates[] lasts = new Coordinates[ropeLength];
 
         public int GetTailVisitCount(string path) {
             LoadAndProcessMoves(path);
             int total = 0;
 
-            foreach(List<Point> row in map.getRows())
-                foreach(Point point in row) {
+            foreach (List<Point> row in map.getRows()) {
+                foreach (Point point in row) {
                     total += point.State == Status.Used ? 1 : 0;
                     }
-
+                }
+            drawMap();
             return total;
             }
 
         private void LoadAndProcessMoves(string path) {
             try {
                 string[] nextMove = new string [2];
-                for (int i = 0;i < rope.Length; i++) rope[i] = new Coordinates(25, 25);
-                for (int i = 0; i < lasts.Length; i++) lasts[i] = new Coordinates(25, 25);
-                map.getPoint(rope.Last().x, rope.Last().y).Use();
-
+                // head of rope with other pars of rope including tail - start position
+                for (int i = 0; i < rope.Length; i++) rope[i] = new Coordinates(gridSize/2-1, gridSize/2-1);
+                // last positions of rope parts for moving - start position
+                for (int i = 0; i < lasts.Length; i++) lasts[i] = new Coordinates(gridSize/2-1, gridSize/2-1);
+                map.getPoint(lasts.Last().x, lasts.Last().y).Use();
 
                 foreach (string line in File.ReadLines(path)) {
+
+                    // read moves one by one
                     nextMove = line.Split(' ');
                     string direction = nextMove[0];
                     int steps = Convert.ToInt32(nextMove[1]);
 
-                    while (steps > 0) {
-                        CheckMap(direction);
-                        MoveTail(direction);
-                        for (int i = 0; i < rope.Length - 1; i++) {
-                            CheckAndMovePartOfRope(i, i+1);
+                    while (steps > 0) { // how many steps in one direction
+                        CheckMap(direction); //check if is possible go this way
+                        MoveRope(direction); // mve tail of rope
+                        for (int i = 0; i+1 < rope.Length; i++) {
+                            // move every part of rope if it is necessary
+                            CheckAndMovePartOfRope(i, i+1);  
                             }
                         map.getPoint(rope.Last().x, rope.Last().y).Use();
                         steps--;
@@ -99,7 +101,7 @@ namespace AdventOfCode_2022.Day_09 {
                     break;
                 }
             }
-        private void MoveTail(string direction) {
+        private void MoveRope(string direction) {
             lasts[0] = new Coordinates(rope[0].x, rope[0].y);
 
             switch (direction) {
@@ -120,10 +122,20 @@ namespace AdventOfCode_2022.Day_09 {
                 }
             }
 
-        private void CheckAndMovePartOfRope(int head, int tail) {
-            if (Math.Abs(rope[tail].x - rope[head].x) > 1 || Math.Abs(rope[tail].y - rope[head].y) > 1) {
-                lasts[tail] = new Coordinates(rope[tail].x, rope[tail].y);
-                rope[tail] = new Coordinates(lasts[head].x, lasts[head].y);
+        private void CheckAndMovePartOfRope(int first, int second) {
+            if (Math.Abs(rope[second].x - rope[first].x) > 1 || Math.Abs(rope[second].y - rope[first].y) > 1) {
+                lasts[second] = new Coordinates(rope[second].x, rope[second].y);
+                rope[second] = new Coordinates(lasts[first].x, lasts[first].y);
+                }
+            }
+
+        private void drawMap() {
+
+            foreach (List<Point> row in map.getRows()) {
+                foreach (Point point in row) {
+                    Console.Write(point.State == Status.Used ? '#' : '.');
+                    }
+                Console.WriteLine();
                 }
             }
         }
