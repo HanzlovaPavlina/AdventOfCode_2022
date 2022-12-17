@@ -59,8 +59,8 @@ namespace AdventOfCode_2022.Day_04 {
 
         // --- Part One ---
         private int CheckFullyOverlap(Range first, Range second) {
-            if (first.from >= second.from && first.to <= second.to) return 1; 
-            if(first.from <= second.from && first.to >= second.to) return 1;
+            if (first.from >= second.from && first.to <= second.to) return 1; // first segment is part of second segment
+            if (first.from <= second.from && first.to >= second.to) return 1; // second segment is part of first segment
             return 0;
             }
 
