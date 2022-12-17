@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode_2022.Day_09 {
 
+    // https://adventofcode.com/2022/day/9
+
     class RopeBridge {
 
         private static int gridSize = 20;
@@ -14,7 +16,6 @@ namespace AdventOfCode_2022.Day_09 {
 
         Grid map = new Grid(gridSize, gridSize);
         Coordinates[] rope = new Coordinates[ropeLength];
-        Coordinates[] lasts = new Coordinates[ropeLength];
 
         public int GetTailVisitCount(string path) {
             LoadAndProcessMoves(path);
@@ -25,7 +26,7 @@ namespace AdventOfCode_2022.Day_09 {
                     total += point.State == Status.Used ? 1 : 0;
                     }
                 }
-            drawMap();
+            // drawMap();
             return total;
             }
 
@@ -34,9 +35,7 @@ namespace AdventOfCode_2022.Day_09 {
                 string[] nextMove = new string [2];
                 // head of rope with other pars of rope including tail - start position
                 for (int i = 0; i < rope.Length; i++) rope[i] = new Coordinates(gridSize/2-1, gridSize/2-1);
-                // last positions of rope parts for moving - start position
-                for (int i = 0; i < lasts.Length; i++) lasts[i] = new Coordinates(gridSize/2-1, gridSize/2-1);
-                map.getPoint(lasts.Last().x, lasts.Last().y).Use();
+                map.getPoint(rope.Last().x, rope.Last().y).Use();
 
                 foreach (string line in File.ReadLines(path)) {
 
@@ -55,17 +54,7 @@ namespace AdventOfCode_2022.Day_09 {
                         map.getPoint(rope.Last().x, rope.Last().y).Use();
                         steps--;
                     }
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 1: {rope[1].x},{rope[1].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 2: {rope[2].x},{rope[2].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 3: {rope[3].x},{rope[3].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 4: {rope[4].x},{rope[4].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 5: {rope[5].x},{rope[5].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 6: {rope[6].x},{rope[6].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 7: {rope[7].x},{rope[7].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 8: {rope[8].x},{rope[8].y}");
-                    //Console.WriteLine($"move: {direction} steps: {steps} head:{rope[0].x},{rope[0].y} 9: {rope[9].x},{rope[9].y}");
-                    //Console.WriteLine("----------------------------------------------------------------------------------------------");
-                    }
+                }
             }
             catch (Exception e) {
                 // Let the user know what went wrong.
@@ -102,7 +91,6 @@ namespace AdventOfCode_2022.Day_09 {
                 }
             }
         private void MoveRope(string direction) {
-            lasts[0] = new Coordinates(rope[0].x, rope[0].y);
 
             switch (direction) {
                 case "R":
@@ -123,10 +111,21 @@ namespace AdventOfCode_2022.Day_09 {
             }
 
         private void CheckAndMovePartOfRope(int first, int second) {
-            if (Math.Abs(rope[second].x - rope[first].x) > 1 || Math.Abs(rope[second].y - rope[first].y) > 1) {
-                lasts[second] = new Coordinates(rope[second].x, rope[second].y);
-                rope[second] = new Coordinates(lasts[first].x, lasts[first].y);
+
+            // points distance
+            int diffX = Math.Abs(rope[first].x - rope[second].x);
+            int diffY = Math.Abs(rope[first].y - rope[second].y);
+
+            // needed diaghonal move
+            if (diffX == 2 || diffY == 2) {
+                int newX = rope[second].x + Math.Sign(rope[first].x - rope[second].x);
+                int newY = rope[second].y + Math.Sign(rope[first].y - rope[second].y);
+                rope[second] = new Coordinates(newX, newY);
                 }
+            else if (diffX > 1) // needed horizontal move
+                rope[second] = new Coordinates(rope[second].x + Math.Sign(rope[first].x - rope[second].x), rope[second].y);
+            else if(diffY > 1) // needed vertical move
+                rope[second] = new Coordinates(rope[second].x, rope[second].y + Math.Sign(rope[first].y - rope[second].y));
             }
 
         private void drawMap() {
