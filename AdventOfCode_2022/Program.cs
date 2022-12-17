@@ -47,10 +47,16 @@ namespace AdventOfCode_2022 {
 
             //Day_12.HillClimbingAlgorithm hills = new Day_12.HillClimbingAlgorithm("../../Day_12/input.txt");
             //Console.WriteLine(hills.GetShortestWayFromEnd());
-            
-            Day_14.RegolithReservoir cave = new Day_14.RegolithReservoir("../../Day_14/input.txt");
-            Console.WriteLine(cave.PourSand());
-            Console.WriteLine(cave.PourAndFullSand());
+
+            //Day_13.DistressSignal signal = new Day_13.DistressSignal("../../Day_13/testInput.txt");
+            //Console.WriteLine();
+
+            //Day_14.RegolithReservoir cave = new Day_14.RegolithReservoir("../../Day_14/input.txt");
+            //Console.WriteLine(cave.PourSand());
+            //Console.WriteLine(cave.PourAndFullSand());
+
+            Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
+            Console.WriteLine(cave.GetMaxRealesedPressure(30));
 
             Console.ReadKey();
             }
