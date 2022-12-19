@@ -55,16 +55,26 @@ namespace AdventOfCode_2022 {
             //Console.WriteLine(cave.PourSand());
             //Console.WriteLine(cave.PourAndFullSand());
 
-            Day_15.BeaconExclusionZone zone_1 = new Day_15.BeaconExclusionZone("../../Day_15/test.txt");
+            /*
+             * Day_15.BeaconExclusionZone zone_1 = new Day_15.BeaconExclusionZone("../../Day_15/test.txt");
             Console.WriteLine("Part_1 test data: " + zone_1.OccupiedPositionsCountAtRow(10));
             Console.WriteLine("Part_2 test data: " + zone_1.GetTuningFrequency(0, 20));
 
             Day_15.BeaconExclusionZone zone_2 = new Day_15.BeaconExclusionZone("../../Day_15/input.txt");
             Console.WriteLine("Part_1 my input: " + zone_2.OccupiedPositionsCountAtRow(2000000));
-            Console.WriteLine("Part_2 my input: " + zone_2.GetTuningFrequency(0, 4000000));
+            Console.WriteLine("Part_2 my input: " + zone_2.GetTuningFrequency(0, 4000000)); 
+            */
 
             //Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
             //Console.WriteLine(cave.GetMaxRealesedPressure(30));
+
+            Day_18.BigCube cube_test = new Day_18.BigCube("../../Day_18/test.txt");
+            Console.WriteLine("Part_1 test data: " + cube_test.GetSurfaceArea());
+            Console.WriteLine("Part_2 test data: " + cube_test.GetSurfaceAreaWithoutBubble());
+
+            Day_18.BigCube cube = new Day_18.BigCube("../../Day_18/input.txt");
+            Console.WriteLine("Part_1 input: " + cube.GetSurfaceArea());
+            Console.WriteLine("Part_2 input: " + cube.GetSurfaceAreaWithoutBubble());
 
             Console.ReadKey();
             }
