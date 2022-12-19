@@ -57,8 +57,11 @@ namespace AdventOfCode_2022 {
 
             Day_15.BeaconExclusionZone zone_1 = new Day_15.BeaconExclusionZone("../../Day_15/test.txt");
             Console.WriteLine("Part_1 test data: " + zone_1.OccupiedPositionsCountAtRow(10));
+            Console.WriteLine("Part_2 test data: " + zone_1.GetTuningFrequency(0, 20));
+
             Day_15.BeaconExclusionZone zone_2 = new Day_15.BeaconExclusionZone("../../Day_15/input.txt");
             Console.WriteLine("Part_1 my input: " + zone_2.OccupiedPositionsCountAtRow(2000000));
+            Console.WriteLine("Part_2 my input: " + zone_2.GetTuningFrequency(0, 4000000));
 
             //Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
             //Console.WriteLine(cave.GetMaxRealesedPressure(30));

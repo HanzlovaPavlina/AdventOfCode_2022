@@ -68,11 +68,35 @@ namespace AdventOfCode_2022.Day_15 {
             LoadInput(path);
             }
 
+        // TODO: the result overflows, how to process large numbers ???
+        public int GetTuningFrequency(int min, int max) {
+
+            Coordinates vacancy = null;
+
+            while(min != max) {
+                List<Segment> occupiedSegments = GetOccupiedSegments(min).OrderBy(s => s.From).ToList();
+
+                int i = 0;
+                for (int j = 1; j < occupiedSegments.Count; j++) {
+                    int overlap = CheckVacancy(occupiedSegments[i], occupiedSegments[j]);
+                    if(overlap == 1) {
+                        vacancy = new Coordinates(occupiedSegments[j].From - 1, min);
+                        min = max-1;
+                        break;
+                        }
+                    if (overlap != 0) i = j;
+                    }
+                min++;
+                }
+            Console.WriteLine("X: " + vacancy.x + ", Y: " + vacancy.y);
+            return vacancy.x * 4000000 + vacancy.y;
+            }
+
         public int OccupiedPositionsCountAtRow(int row) {
 
             List<Segment> occupiedSegments = GetOccupiedSegments(row).OrderBy(s => s.From).ToList();
 
-            foreach (Segment s in occupiedSegments) Console.WriteLine("from: " + s.From + ", to: " + s.To);
+             foreach (Segment s in occupiedSegments) Console.WriteLine("from: " + s.From + ", to: " + s.To);
 
             int occupiedPoints = occupiedSegments.First().Lenght;
             int i = 0;
@@ -110,7 +134,7 @@ namespace AdventOfCode_2022.Day_15 {
                     if (!beacons.Exists(b => b.x == closestBaconCoord.x && b.y == closestBaconCoord.y)) beacons.Add(closestBaconCoord);
 
                     if (Convert.ToInt32(words[3]) < minX) minX = Convert.ToInt32(words[3]);
-                    if (Convert.ToInt32(words[3]) < minX) minX = Convert.ToInt32(words[11]);
+                    if (Convert.ToInt32(words[11]) < minX) minX = Convert.ToInt32(words[11]);
                     if (Convert.ToInt32(words[5]) > maxX) maxX = Convert.ToInt32(words[5]);
                     if (Convert.ToInt32(words[13]) > maxX) maxX = Convert.ToInt32(words[13]);
                     }
@@ -126,12 +150,12 @@ namespace AdventOfCode_2022.Day_15 {
             List<Segment> occupiedSegments = new List<Segment>();
 
             foreach (Sensor s in sensors) {
-                Console.WriteLine("sensor: " + s.X + "," + s.Y + " > beacon: " + s.Bacon.x + "," + s.Bacon.y);
+                //Console.WriteLine("sensor: " + s.X + "," + s.Y + " > beacon: " + s.Bacon.x + "," + s.Bacon.y);
                 if (s.Y - s.Distance > row || s.Y + s.Distance < row) continue; // no penetration
 
                 Segment newSegment;
                 newSegment = new Segment(s.X - (s.Distance - Math.Abs(s.Y - row)), s.X);
-                Console.WriteLine("from: " + newSegment.From + ", to: " + newSegment.To + ", lenght: " + newSegment.Lenght);
+                //Console.WriteLine("from: " + newSegment.From + ", to: " + newSegment.To + ", lenght: " + newSegment.Lenght);
                 occupiedSegments.Add(newSegment);
                 }
             return occupiedSegments;
@@ -141,7 +165,18 @@ namespace AdventOfCode_2022.Day_15 {
             if (first.To >= second.To) return 0; // second segment is part of first segment
             else if (second.From > first.To) return second.Lenght; // segments not overlaping
             
-            return second.To - first.To;
+            return second.To - first.To; // second segment start in first segment and continue behind first segment
+            }
+
+        /// check for free place between segments
+        /// -1 == second segment start in first segment and continue behind first segment
+        /// 0 == second segment is fullz part of first segment
+        /// 1 == segments not overlaping, there is free place
+        private int CheckVacancy(Segment first, Segment second) {
+            if (first.To >= second.To) return 0; // second segment is part of first segment
+            else if (second.From > first.To) return 1; // segments not overlaping
+
+            return -1;
             }
         }
     }
