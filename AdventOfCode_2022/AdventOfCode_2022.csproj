@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,8 @@
     <Compile Include="Day_15\BeaconExclusionZone.cs" />
     <Compile Include="Day_16\ProboscideaVolcanium.cs" />
     <Compile Include="Day_18\BoilingBoulders.cs" />
+    <Compile Include="Day_21\MonkeyMath_02.cs" />
+    <Compile Include="Day_21\MonkeyMath_01.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="Day_10\CathodeRayTube_02.cs" />
     <Compile Include="Day_10\CathodeRayTube_01.cs" />
@@ -99,6 +102,8 @@
     <Content Include="Day_16\input.txt" />
     <Content Include="Day_18\test.txt" />
     <Content Include="Day_18\input.txt" />
+    <Content Include="Day_21\test.txt" />
+    <Content Include="Day_21\input.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

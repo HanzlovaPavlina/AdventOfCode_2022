@@ -68,13 +68,21 @@ namespace AdventOfCode_2022 {
             //Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
             //Console.WriteLine(cave.GetMaxRealesedPressure(30));
 
-            Day_18.BigCube cube_test = new Day_18.BigCube("../../Day_18/test.txt");
+            /*
+             * Day_18.BigCube cube_test = new Day_18.BigCube("../../Day_18/test.txt");
             Console.WriteLine("Part_1 test data: " + cube_test.GetSurfaceArea());
             Console.WriteLine("Part_2 test data: " + cube_test.GetSurfaceAreaWithoutBubble());
 
             Day_18.BigCube cube = new Day_18.BigCube("../../Day_18/input.txt");
             Console.WriteLine("Part_1 input: " + cube.GetSurfaceArea());
             Console.WriteLine("Part_2 input: " + cube.GetSurfaceAreaWithoutBubble());
+            */
+
+            Day_21.MonkeyMath_02 match = new Day_21.MonkeyMath_02("../../Day_21/test.txt");
+            Console.WriteLine("Part_2 test data: " + match.GetResult());
+
+            Day_21.MonkeyMath_02 match_input = new Day_21.MonkeyMath_02("../../Day_21/input.txt");
+            Console.WriteLine("Part_2 input data: " + match_input.GetResult());
 
             Console.ReadKey();
             }
