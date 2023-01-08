@@ -82,7 +82,7 @@ namespace AdventOfCode_2022.Day_17 {
 
         public int GetTowerOfRocksHeigth(int count) {
 
-            int total = MoveRocks(2022);
+            int total = MoveRocks(count);
             return total;
             }
 
@@ -126,7 +126,7 @@ namespace AdventOfCode_2022.Day_17 {
                     // try fall 1 unit or rest
                     if (Collides(new Coordinates(position.x, position.y - 1), newRock)) {
                         Rest(position, newRock);
-                        towerHeight = position.y + 1;
+                        if(position.y + 1 > towerHeight) towerHeight = position.y + 1;
                         break; 
                         }
                     else position.y--;

@@ -68,8 +68,8 @@ namespace AdventOfCode_2022 {
             //Day_16.ProboscideaVolcanium cave = new Day_16.ProboscideaVolcanium("../../Day_16/testInput.txt");
             //Console.WriteLine(cave.GetMaxRealesedPressure(30));
 
-            Day_17.PyroclasticFlow tetris = new Day_17.PyroclasticFlow("../../Day_17/test.txt");
-            Console.WriteLine("Part_1 test data: " + tetris.GetTowerOfRocksHeigth(2022));
+            Day_17.PyroclasticFlow tetris = new Day_17.PyroclasticFlow("../../Day_17/input.txt");
+            Console.WriteLine("After 2022 rocks: " + tetris.GetTowerOfRocksHeigth(1000000000));
 
             /*
              * Day_18.BigCube cube_test = new Day_18.BigCube("../../Day_18/test.txt");
