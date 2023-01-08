@@ -57,6 +57,7 @@
     <Compile Include="Day_13\DistressSignal.cs" />
     <Compile Include="Day_15\BeaconExclusionZone.cs" />
     <Compile Include="Day_16\ProboscideaVolcanium.cs" />
+    <Compile Include="Day_17\PyroclasticFlow.cs" />
     <Compile Include="Day_18\BoilingBoulders.cs" />
     <Compile Include="Day_21\MonkeyMath_02.cs" />
     <Compile Include="Day_21\MonkeyMath_01.cs" />
@@ -100,6 +101,8 @@
     <Content Include="Day_15\test.txt" />
     <Content Include="Day_16\testInput.txt" />
     <Content Include="Day_16\input.txt" />
+    <Content Include="Day_17\test.txt" />
+    <Content Include="Day_17\input.txt" />
     <Content Include="Day_18\test.txt" />
     <Content Include="Day_18\input.txt" />
     <Content Include="Day_21\test.txt" />
