@@ -59,6 +59,7 @@
     <Compile Include="Day_16\ProboscideaVolcanium.cs" />
     <Compile Include="Day_17\PyroclasticFlow.cs" />
     <Compile Include="Day_18\BoilingBoulders.cs" />
+    <Compile Include="Day_20\GrovePositioningSystem.cs" />
     <Compile Include="Day_21\MonkeyMath_02.cs" />
     <Compile Include="Day_21\MonkeyMath_01.cs" />
     <Compile Include="Grid.cs" />
@@ -105,6 +106,8 @@
     <Content Include="Day_17\input.txt" />
     <Content Include="Day_18\test.txt" />
     <Content Include="Day_18\input.txt" />
+    <Content Include="Day_20\input.txt" />
+    <Content Include="Day_20\test.txt" />
     <Content Include="Day_21\test.txt" />
     <Content Include="Day_21\input.txt" />
   </ItemGroup>
