@@ -81,14 +81,17 @@ namespace AdventOfCode_2022 {
             Console.WriteLine("Part_2 input: " + cube.GetSurfaceAreaWithoutBubble());
             */
 
-            Day_20.GrovePositioningSystem system = new Day_20.GrovePositioningSystem("../../Day_20/input.txt", 2);
-            Console.WriteLine("Part_2: " + system.GetGroveCoordinates());
+            //Day_20.GrovePositioningSystem system = new Day_20.GrovePositioningSystem("../../Day_20/input.txt", 2);
+            //Console.WriteLine("Part_2: " + system.GetGroveCoordinates());
 
             //Day_21.MonkeyMath_02 match = new Day_21.MonkeyMath_02("../../Day_21/test.txt");
             //Console.WriteLine("Part_2 test data: " + match.GetResult());
 
             //Day_21.MonkeyMath_02 match_input = new Day_21.MonkeyMath_02("../../Day_21/input.txt");
             //Console.WriteLine("Part_2 input data: " + match_input.GetResult());
+
+            Day_22.MonkeyMap map = new Day_22.MonkeyMap("../../Day_22/input.txt");
+            Console.WriteLine("Part_1: " + map.GetFinalPassword());
 
             Console.ReadKey();
             }
