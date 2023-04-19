@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
+using AdventOfCode_2022.Day_11;
 
 namespace AdventOfCode_2022.Day_21 {
 
@@ -23,9 +24,12 @@ namespace AdventOfCode_2022.Day_21 {
             Monkey rootFirst = monkeys.First(m => m.Name == root.FirstMonkey);
             Monkey rootSecond = monkeys.First(m => m.Name == root.SecondMonkey);
             Monkey humn = monkeys.First(m => m.Name == "humn");
+
+            // try get result from both root monkeys, one monkey must return result
             bool first = GetResult(rootFirst);
             bool second = GetResult(rootSecond);
 
+            // get missing result
             if (!first) SendResult(rootFirst, rootSecond.Result);
             else SendResult(rootSecond, rootFirst.Result);
 
@@ -39,11 +43,13 @@ namespace AdventOfCode_2022.Day_21 {
                 foreach (string line in File.ReadLines(path)) {
                     properties = line.Split(new char[] { ' ', ':' }, StringSplitOptions.RemoveEmptyEntries);
 
+                    // root: monkey1 = monkey2
                     if (properties[0] == "root") monkeys.Add(new Monkey(properties[0], properties[1], '=', properties[3]));
+                    // humn:
                     else if (properties[0] == "humn") monkeys.Add(new Monkey(properties[0]));
-                    else if (properties.Length == 2) {
-                        monkeys.Add(new Monkey(properties[0], Convert.ToInt32(properties[1])));
-                        }
+                    // monkey: number
+                    else if (properties.Length == 2) monkeys.Add(new Monkey(properties[0], Convert.ToInt32(properties[1])));
+                    // monkey: monkey1 operation monkey2
                     else monkeys.Add(new Monkey(properties[0], properties[1], Convert.ToChar(properties[2]), properties[3]));
                         
                     }
@@ -54,6 +60,8 @@ namespace AdventOfCode_2022.Day_21 {
                 }
             }
 
+        // DFS algorithm for result searching
+        // if monkey name is "humn", stop searching, return false
         bool GetResult(Monkey monkey) {
 
             if (monkey.Name == "humn") return false;
@@ -75,6 +83,7 @@ namespace AdventOfCode_2022.Day_21 {
             return true;
             }
 
+        // send and count results from root too humn
         void SendResult(Monkey monkey, BigInteger result) {
 
             if (monkey.Name == "humn") {
@@ -85,17 +94,21 @@ namespace AdventOfCode_2022.Day_21 {
             Monkey first = monkeys.First(m => m.Name == monkey.FirstMonkey);
             Monkey second = monkeys.First(m => m.Name == monkey.SecondMonkey);
 
+            // try count both results
             if(first.state == State.FRESH && second.state == State.FRESH) {
                 GetResult(first);
                 GetResult(second);
                 }
 
+            // count first number of operation knowing result
             if (first.state == State.FRESH) {
                 BigInteger firstResult = CountFirst(monkey.Operation, result, second.Result);
                 first.SaveResult(firstResult);
                 first.state = State.DONE;
                 SendResult(first, firstResult);
                 }
+
+            // count second number of operation knowing result
             if (second.state == State.FRESH) {
                 BigInteger secondResult = CountSecond(monkey.Operation, result, first.Result);
                 second.SaveResult(secondResult);
@@ -103,8 +116,9 @@ namespace AdventOfCode_2022.Day_21 {
                 SendResult(second, secondResult);
                 }
             }
-        
-        private BigInteger Count(char op, BigInteger first, BigInteger second) {
+
+        // performing mathematical operation
+        public BigInteger Count(char op, BigInteger first, BigInteger second) {
 
             BigInteger result = 0;
 
@@ -129,7 +143,8 @@ namespace AdventOfCode_2022.Day_21 {
             return result;
             }
 
-        BigInteger CountFirst(char op, BigInteger result, BigInteger second) {
+
+    BigInteger CountFirst(char op, BigInteger result, BigInteger second) {
 
             BigInteger first = 0;
 

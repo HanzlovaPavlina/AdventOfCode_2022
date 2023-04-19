@@ -42,8 +42,8 @@ namespace AdventOfCode_2022 {
             //Day_10.Signal_2 signal = new Day_10.Signal_2("../../Day_10/input.txt");
             //Console.WriteLine(signal.getStrength());
 
-            //Day_11.Monkeys monkeys = new Day_11.Monkeys("../../Day_11/testInput.txt");
-            //Console.WriteLine(monkeys.playWitItems());
+            //Day_11.Monkeys monkeys = new Day_11.Monkeys("../../Day_11/my_input.txt");
+            //Console.WriteLine(monkeys.playWitItems(20));
 
             //Day_12.HillClimbingAlgorithm hills = new Day_12.HillClimbingAlgorithm("../../Day_12/input.txt");
             //Console.WriteLine(hills.GetShortestWayFromEnd());
@@ -84,14 +84,17 @@ namespace AdventOfCode_2022 {
             //Day_20.GrovePositioningSystem system = new Day_20.GrovePositioningSystem("../../Day_20/input.txt", 2);
             //Console.WriteLine("Part_2: " + system.GetGroveCoordinates());
 
-            //Day_21.MonkeyMath_02 match = new Day_21.MonkeyMath_02("../../Day_21/test.txt");
-            //Console.WriteLine("Part_2 test data: " + match.GetResult());
+            Day_21.MonkeyMath_01 match = new Day_21.MonkeyMath_01("../../Day_21/input.txt");
+            Console.WriteLine("Part_1 test data: " + match.GetResult());
 
-            //Day_21.MonkeyMath_02 match_input = new Day_21.MonkeyMath_02("../../Day_21/input.txt");
-            //Console.WriteLine("Part_2 input data: " + match_input.GetResult());
+            Day_21.MonkeyMath_02 match_part_2 = new Day_21.MonkeyMath_02("../../Day_21/input.txt");
+            Console.WriteLine("Part_2 input data: " + match_part_2.GetResult());
 
-            Day_22.MonkeyMap map = new Day_22.MonkeyMap("../../Day_22/input.txt");
-            Console.WriteLine("Part_1: " + map.GetFinalPassword());
+            //Day_22.MonkeyMap_2D map = new Day_22.MonkeyMap_2D("../../Day_22/input.txt");
+            //Console.WriteLine("Part_1: " + map.GetFinalPassword());
+
+            //Day_22.MonkeyMap_3D cube = new Day_22.MonkeyMap_3D("../../Day_22/test.txt");
+            //Console.WriteLine("Part_2: " + cube.GetFinalPassword());
 
             Console.ReadKey();
             }

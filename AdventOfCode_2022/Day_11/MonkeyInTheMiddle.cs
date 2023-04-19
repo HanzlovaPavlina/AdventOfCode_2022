@@ -64,8 +64,8 @@ namespace AdventOfCode_2022.Day_11 {
             LoadMonkeys(path);
             }
 
-        public int playWitItems() {
-            int counting = 20;
+        public int playWitItems(int rounds) {
+            int counting = rounds;
 
             while (counting > 0) {
                 foreach (Monkey monkey in monkeys) {
@@ -86,7 +86,7 @@ namespace AdventOfCode_2022.Day_11 {
                 }
             
             var sorted = monkeys.OrderBy(m => m.inspectedItems).ToList();
-            Console.WriteLine($"== After round {counting} ==");
+            Console.WriteLine($"== After round {rounds} ==");
             foreach (Monkey monkey in monkeys)
                 Console.WriteLine($"Monkey {monkey.number} inspected items {monkey.inspectedItems} times.");
             return sorted.Last().inspectedItems* sorted.ElementAt(sorted.Count-2).inspectedItems;

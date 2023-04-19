@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode_2022.Day_22 {
 
-    class Walker {
+    class Walker_3D {
 
         int row;
         int column;
@@ -29,7 +29,7 @@ namespace AdventOfCode_2022.Day_22 {
             }
         }
 
-        public Walker(int row, int col, int dir, char[,] map) {
+        public Walker_3D (int row, int col, int dir, char[,] map) {
             this.row = row;
             this.column = col;
             this.direction = dir;
@@ -97,13 +97,13 @@ namespace AdventOfCode_2022.Day_22 {
         }
     }
 
-    class MonkeyMap {
+    class MonkeyMap_3D {
 
         char[,] map;
         List<int> steps;
         List<char> rotations;
 
-        public MonkeyMap(string path) {
+        public MonkeyMap_3D (string path) {
 
             steps = new List<int>();
             rotations = new List<char>();
@@ -115,7 +115,7 @@ namespace AdventOfCode_2022.Day_22 {
 
             int startCol = 0;
             while (map[0, startCol] != '.') startCol++;
-            Walker walker = new Walker(0, startCol, 'R', map);
+            Walker_3D walker = new Walker_3D(0, startCol, 'R', map);
             GoToEnd(walker, steps, rotations);
 
             return 1000 * walker.RowValue + 4 * walker.ColumnValue + walker.DirectionValue;
@@ -161,7 +161,7 @@ namespace AdventOfCode_2022.Day_22 {
             foreach (Match next in direstions) rotations.Add(Convert.ToChar(next.Value));
         }
 
-        void GoToEnd(Walker walker, List<int> steps, List<char> rotations) {
+        void GoToEnd(Walker_3D walker, List<int> steps, List<char> rotations) {
 
             int stepsPos = 0;
             int rotationsPos = 0;

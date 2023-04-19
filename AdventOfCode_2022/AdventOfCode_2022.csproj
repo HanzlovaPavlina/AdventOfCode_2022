@@ -62,7 +62,8 @@
     <Compile Include="Day_20\GrovePositioningSystem.cs" />
     <Compile Include="Day_21\MonkeyMath_02.cs" />
     <Compile Include="Day_21\MonkeyMath_01.cs" />
-    <Compile Include="Day_22\MonkeyMap.cs" />
+    <Compile Include="Day_22\MonkeyMap_part2.cs" />
+    <Compile Include="Day_22\MonkeyMap_part1.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="Day_10\CathodeRayTube_02.cs" />
     <Compile Include="Day_10\CathodeRayTube_01.cs" />
@@ -91,8 +92,8 @@
     <Content Include="Day_09\testInput.txt" />
     <Content Include="Day_10\input.txt" />
     <Content Include="Day_10\testInput.txt" />
-    <Content Include="Day_11\input.txt" />
-    <Content Include="Day_11\testInput.txt" />
+    <Content Include="Day_11\my_input.txt" />
+    <Content Include="Day_11\test_input.txt" />
     <Content Include="Day_12\input.txt" />
     <Content Include="Day_12\testInput.txt" />
     <Content Include="Day_13\input.txt" />
@@ -109,7 +110,6 @@
     <Content Include="Day_18\input.txt" />
     <Content Include="Day_20\input.txt" />
     <Content Include="Day_20\test.txt" />
-    <Content Include="Day_21\test.txt" />
     <Content Include="Day_21\input.txt" />
     <Content Include="Day_22\input.txt" />
     <Content Include="Day_22\test.txt" />
